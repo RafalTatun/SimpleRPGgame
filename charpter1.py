@@ -18,11 +18,10 @@ def init_new_character():
         if int(choice) == 1:
             ps.print_slow(text[1])
             new_character.update_char()
-            #print(f'{newCharacter.name}\n{newCharacter.gender}\n{newCharacter.race}\n{newCharacter.classes}\n{newCharacter.healthMax}\n{newCharacter.manaMax}')
             return new_character
         elif int(choice) == 2:
             new_character.update_char()
-            #print(f'{newCharacter.name}\n{newCharacter.gender}\n{newCharacter.race}\n{newCharacter.classes}\n{newCharacter.healthMax}\n{newCharacter.manaMax}')
             return new_character
         else:
             print('Invalid choice, try again')
+        # print(f'{new_character.name}\n{new_character.gender}\n{new_character.race}\n{new_character.classes}\n{new_character.healthMax}\n{new_character.manaMax}')

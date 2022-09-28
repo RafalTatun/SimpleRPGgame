@@ -1,9 +1,12 @@
+from dataclasses import dataclass
+
+
+@dataclass
 class Race:
-    def __init__(self, extra_hp = 0, extra_mana = 0, extra_rage = 0, extra_stamina = 0):
-        self.extra_hp = extra_hp
-        self.extra_mana = extra_mana
-        self.extra_rage = extra_rage
-        self.extra_stamina = extra_stamina
+    extra_hp: int = 0
+    extra_mana: int = 0
+    extra_rage: int = 0
+    extra_stamina: int = 0
     
 
 class Human(Race):

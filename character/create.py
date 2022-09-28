@@ -2,11 +2,12 @@
 
 import os
 import json
+from tokenize import String
 from .races import *
 from .classes import *
 from .location import *
 from .professions import *
-from enum import Enum
+from dataclasses import dataclass
 
 
 hero = {
@@ -21,25 +22,23 @@ hero = {
     'profession': ''
 }
 
-
+@dataclass
 class Create:
-    def __init__(self, name = None, gender = None, race = None, classes = None, location = None, health_max = 0, mana_max = 0, rage_max = 0, stamina_max = 0, profession = None):
-        self.name = name
-        self.gender = gender
-        self.race = race
-        self.classes = classes
-        self.location = location
-        self.health_max = health_max
-        self.mana_max = mana_max
-        self.rage_max = rage_max
-        self.stamina_max = stamina_max
-        self.profession = profession
+    name: str = None
+    gender: str = None
+    race: str = None
+    classes: str = None
+    profession: str = None
+    location: str = None
+    health_max: int = 0
+    mana_max: int = 0
+    rage_max: int = 0
+    stamina_max: int = 0
 
 
     def init_general_information(self):
         self.name = input('What is your name: ')
         self.gender = input('What is your gender: ')
-        os.system('cls')
         return self.name, self.gender
 
 
@@ -61,7 +60,6 @@ class Create:
                 return self.race
             else:
                 print('Invalid choice, try again')
-            os.system('cls')
                 
 
     def init_class(self):
@@ -79,7 +77,6 @@ class Create:
                 return self.classes
             else:
                 print('Invalid choice, try again')
-            os.system('cls')
 
 
     def update_map(self):

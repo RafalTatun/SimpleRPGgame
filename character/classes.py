@@ -1,10 +1,13 @@
 # All classes
+from dataclasses import dataclass
+
+
+@dataclass
 class Class():
-    def __init__(self, health = 0, mana = 0, rage = 0, stamina = 0):
-        self.health = health
-        self.mana = mana
-        self.rage = rage
-        self.stamina = stamina
+    health: int = 0
+    mana: int = 0
+    rage: int = 0
+    stamina: int = 0
 
 
 # Class Warrior
