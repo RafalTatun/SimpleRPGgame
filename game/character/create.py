@@ -10,18 +10,6 @@ from .professions import *
 from dataclasses import dataclass
 
 
-hero = {
-    'name': '',
-    'sex': '',
-    'race': '',
-    'classes': '',
-    'health': 0,
-    'mana': 0,
-    'rage': 0,
-    'stamina': 0,
-    'profession': ''
-}
-
 @dataclass
 class Create:
     name: str = None
@@ -106,9 +94,6 @@ class Create:
         self.mana_max = self.race.extra_mana + self.classes.mana
         self.rage_max = self.classes.rage
         self.stamina_max = self.classes.stamina
-
-        with open('hero.txt', 'w') as json_file:
-            json.dump(hero, json_file)
 
 
 # Tutaj skończyłeś i potrzebujesz zrobić część programu z zapisywaniem danych z Class na słownik, potem do JSON i Mapę!!! :D zapomniałem bo zacząłem robić mapę do gry w konsoli

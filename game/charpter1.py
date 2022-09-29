@@ -1,4 +1,5 @@
 #Charpter 1
+import os
 import printslow as ps
 import character.create as character
 
@@ -8,9 +9,9 @@ text = ['Hello Adventure!\n I\'m glad to see, you feel right\n We need to hurry.
 player_text = ['1. Who am I?\n My head\'s about to explode...', '2. I\'m... [Creating character]']
 new_character = character.Create()
 
-
 # Init new character 
 def init_new_character():
+    os.system('cls')
     ps.print_slow(text[0])
     while True:
         for all_text in player_text: print(all_text)
@@ -24,4 +25,5 @@ def init_new_character():
             return new_character
         else:
             print('Invalid choice, try again')
+        
         # print(f'{new_character.name}\n{new_character.gender}\n{new_character.race}\n{new_character.classes}\n{new_character.healthMax}\n{new_character.manaMax}')
