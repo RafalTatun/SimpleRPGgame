@@ -1,0 +1,9 @@
+{
+    "Malcolm": {
+        "id": 1,
+        "name": "Malcolm",
+        "text": ["Hello Adventure!\n I'm glad to see, you feel right\n We need to hurry...\n Roof comes down", "Who are me...\n Who are You?!"],
+        "quests": [],
+        "type": "Friend"
+    }
+}

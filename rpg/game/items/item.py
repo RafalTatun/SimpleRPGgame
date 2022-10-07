@@ -24,6 +24,6 @@ class Items:
 
 
 with open("/Users/Rafal/Desktop/Git/SimpleRPGgame/rpg/game/items/data.json", "r") as data_items:
-        data = json.load(data_items)
+    data = json.load(data_items)
 
 print(data)
