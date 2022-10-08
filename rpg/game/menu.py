@@ -4,17 +4,16 @@ import os
 import printslow as ps
 import charpter1
 
-text1 = ['Game title', 'Game made by Rafal Tatun']
+
 menu_text = ['1. New Game', '2. Load Game (comming soon)', '3. Online (comming soon)', '4. Exit']
 
 
 def main_menu():
-    ps.print_slow(text1[0])
-    ps.print_slow(text1[1])
+    ps.print_slow('\nGame title\n\nGame made by Rafal Tatun')
     time.sleep(2)
     os.system('cls')
     os.system('clear')
-    for i in range(len(menu_text)): ps.print_slow(menu_text[i])
+    ps.print_slow('1. New Game\n\n2. Load Game (comming soon)\n\n3. Online (comming soon)\n\n4. Exit')
     while True:
         new_character = charpter1.new_character
         choice = input('Select option: ')

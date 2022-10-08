@@ -14,6 +14,8 @@
 # Load
 # Exit
 import os
+import json
+
 
 def show_quests():
     pass
@@ -23,8 +25,11 @@ def show_inventory():
     pass
 
 
-def save():
-    pass
+def save(hero):
+    jsonString = json.dumps(hero)
+    jsonFile = open("hero.json", "w")
+    jsonFile.write(jsonString)
+    jsonFile.close()
 
 
 def load():
@@ -39,7 +44,7 @@ class Player:
     def menu_player(self):
         while True:
             os.system('cls')
-            choice = input('1. Quests\n2. Inventory\n3. Save\n4. Load\n5. Exit\n')
+            choice = input('1. Quests\n2. Inventory\n3. Save\n4. Load\n5. Exit\nSelect option: ')
             if choice == 1:
                 show_quests()
             elif choice == 2:
@@ -52,7 +57,3 @@ class Player:
                 exit()
             else:
                 print('Invalid choice, try again')
-
-hero = Player()
-
-hero.menu_player()

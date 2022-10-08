@@ -1,29 +1,30 @@
 #Charpter 1
 import os
 import printslow as ps
-import character.create as character
-
+import character.create
+from npc.npc import malcolm
+import player
 
 # Story 1
-first_npc = ['Hello Adventure!\n I\'m glad to see, you feel right\n We need to hurry...\n Roof comes down','Who are me...\n Who are You?!']
-player_text = ['1. Who am I?\n My head\'s about to explode...', '2. I\'m... [Creating character]']
-new_character = character.Create()
+new_character = character.create.Create()
+
 
 # Init new character 
 def init_new_character():
     os.system('cls')
     os.system('clear')
-    ps.print_slow(first_npc[0])
+    ps.print_slow('Charpter 1\n"Headache"')
+    ps.print_slow(malcolm.get_text[0])
     while True:
-        for all_text in player_text: print(all_text)
-        choice = input('')
+        ps.print_slow(malcolm.get_text[2])
+        choice = input('Select option: ')
         if int(choice) == 1:
-            ps.print_slow(first_npc[1])
+            ps.print_slow(malcolm.get_text[1])
             new_character.update_char()
-            return new_character
+            return player.save(new_character)
         elif int(choice) == 2:
             new_character.update_char()
-            return new_character
+            return player.save(new_character)
         else:
             print('Invalid choice, try again')
         

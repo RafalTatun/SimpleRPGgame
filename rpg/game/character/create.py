@@ -1,8 +1,6 @@
 # Creating character
 
 import os
-import json
-from tokenize import String
 from .races import *
 from .classes import *
 from .location import *
@@ -86,15 +84,17 @@ class Create:
             os.system('clear')
 
 
-    def update_char(self):
-        self.init_general_information()
-        self.init_race()
-        self.init_class()
-        self.update_map()
+    def update_stats(self):
         self.health_max = self.race.extra_hp + self.classes.health
         self.mana_max = self.race.extra_mana + self.classes.mana
         self.rage_max = self.classes.rage
         self.stamina_max = self.classes.stamina
+
+
+    def update_char(self):
+        os.system('cls')
+        os.system('clear')
+        return self.init_general_information(), self.init_race(), self.init_class(), self.update_map(), self.update_stats()
 
 
 # Tutaj skończyłeś i potrzebujesz zrobić część programu z zapisywaniem danych z Class na słownik, potem do JSON i Mapę!!! :D zapomniałem bo zacząłem robić mapę do gry w konsoli

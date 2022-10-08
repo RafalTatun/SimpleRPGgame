@@ -1,13 +1,14 @@
 from dataclasses import dataclass, field
-from dataclass_wizard import JSONWizard
 import json
 
-
+# Load JSON file with npcs
 with open("/Users/Rafal/Desktop/Git/SimpleRPGgame/rpg/game/npc/data.json", "r") as data_items:
     data = json.load(data_items)
 
+
+# NPC class with functionality
 @dataclass
-class Npc(JSONWizard):
+class Npc():
     id: int = None
     name: str = 'Stranger'
     text: list[str] = field(default_factory=list)
@@ -15,21 +16,54 @@ class Npc(JSONWizard):
     type: str = None
 
 
-    # def get_npc(self, id, name=None, quests=None, type=None):
-    #     if id is None:
-    #         return Npc(id=None, name=name, quests=quests, type=type)
-    #     elif name is None:
-    #         pass
+    @property
+    def get_id(self):
+        return self.id
+
+    @get_id.setter
+    def get_id(self, value):
+        self.id = value
+    
+
+    @property
+    def get_name(self):
+        return self.name
+
+    @get_name.setter
+    def get_name(self, value):
+        self.name = value
+
+
+    @property
+    def get_text(self):
+        return self.text
+    
+    @get_text.setter
+    def get_text(self, value):
+        self.text = value
+
+
+    @property
+    def get_quest(self):
+        return self.quests
+
+    @get_quest.setter
+    def get_quest(self, value):
+        self.quests = value
+
+    
+    @property
+    def get_type(self):
+        return self.type
+
+    @get_type.setter
+    def get_type(self, value):
+        self.type = value
 
 
     # def set_npc(id, name, quests, type):
     #     pass
 
-class Malcolm(Npc):
-    def __init__(self, id=data['Malcolm']['id'], name=data['Malcolm']['name'], text=data['Malcolm']['text'],quests=data['Malcolm']['quests'], type=data['Malcolm']['type']):
-        super().__init__(id, name, text, quests, type)
-
-    
-
-print(Malcolm.name)
-print(Malcolm.id)
+# All NPCs
+malcolm = Npc(data['Malcolm']['id'],data['Malcolm']['name'],data['Malcolm']['text'],data['Malcolm']['quests'],data['Malcolm']['type'])    
+minsz = Npc(data['Minsz']['id'],data['Minsz']['name'],data['Minsz']['text'],data['Minsz']['quests'],data['Minsz']['type'])
