@@ -1,1 +1,0 @@
-{"id": {"nickname": "Eldkar", "password": "admin"}, "slots": {"slot1": "New hero", "slot2": "New hero", "slot3": "New hero"}}

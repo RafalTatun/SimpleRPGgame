@@ -1,5 +1,8 @@
 __pychace__
 lib
 scripts
+include
 dist
+bin
 RPG_Game.egg-info
+pyvenv.cfg
