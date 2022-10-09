@@ -6,7 +6,7 @@ from .classes import *
 from .location import *
 from .professions import *
 from dataclasses import dataclass
-
+import json
 
 @dataclass
 class Create:
@@ -80,8 +80,6 @@ class Create:
                 return self.location
             else:
                 print('Invalid choice, try again')
-            os.system('cls')
-            os.system('clear')
 
 
     def update_stats(self):
@@ -94,8 +92,15 @@ class Create:
     def update_char(self):
         os.system('cls')
         os.system('clear')
-        return self.init_general_information(), self.init_race(), self.init_class(), self.update_map(), self.update_stats()
+        self.init_general_information()
+        self.init_race()
+        self.init_class()
+        self.update_map()
+        self.update_stats()
 
+
+    def toJSON(self):
+        return json.dumps(self, default=lambda o: o.__dict__)
 
 # Tutaj skończyłeś i potrzebujesz zrobić część programu z zapisywaniem danych z Class na słownik, potem do JSON i Mapę!!! :D zapomniałem bo zacząłem robić mapę do gry w konsoli
 

@@ -4,6 +4,7 @@ from dataclasses import dataclass
 
 @dataclass
 class Class():
+    name: str = None
     health: int = 0
     mana: int = 0
     rage: int = 0
@@ -12,8 +13,8 @@ class Class():
 
 # Class Warrior
 class Warrior(Class):
-    def __init__(self, health=200, rage=50):
-        super().__init__(health, rage)
+    def __init__(self, name='Warrior', health=200, rage=50):
+        super().__init__(name, health, rage)
 
 
 # Warrior actions
@@ -26,8 +27,8 @@ class Warrior(Class):
 
 # Class Mage
 class Mage(Class):
-    def __init__(self, health=150, mana=100):
-        super().__init__(health, mana)
+    def __init__(self, name='Mage', health=150, mana=100):
+        super().__init__(name, health, mana)
 
 
 # Mage actions
@@ -46,8 +47,8 @@ class Mage(Class):
 
 # Class Rogue
 class Rogue(Class):
-    def __init__(self, health=100, stamina=100):
-        super().__init__(health, stamina)
+    def __init__(self, name='Rogue', health=100, stamina=100):
+        super().__init__(name, health, stamina)
 
 
 # Rogue actions

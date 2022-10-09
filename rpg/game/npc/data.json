@@ -2,7 +2,7 @@
     "Malcolm": {
         "id": 1,
         "name": "Malcolm",
-        "text": ["Hello Adventure!\n I'm glad to see, you feel right\n We need to hurry...\n Roof comes down", "Who are me...\nWho are You?!", "1. Who are You?\n My head's about to explode...\n\n2. I'm... [Creating character]"],
+        "text": ["Hello Adventure!\n I'm glad to see, you feel right\n We need to hurry...\n Roof comes down", "1. Who are You?\n My head's about to explode...\n\n2. I'm... [Creating character]", "Who are me...\nWho are You?!"],
         "quests": {
             "starter": ["1. Kill some wolves (5)", "2. Deliver package to the Major"],
             "normal": [""]

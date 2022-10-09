@@ -16,16 +16,16 @@ def init_new_character():
     ps.print_slow('Charpter 1\n"Headache"')
     ps.print_slow(malcolm.get_text[0])
     while True:
-        ps.print_slow(malcolm.get_text[2])
+        ps.print_slow(malcolm.get_text[1])
         choice = input('Select option: ')
         if int(choice) == 1:
-            ps.print_slow(malcolm.get_text[1])
+            ps.print_slow(malcolm.get_text[2])
             new_character.update_char()
-            return player.save(new_character)
+            return player.save(new_character.toJSON())
         elif int(choice) == 2:
             new_character.update_char()
-            return player.save(new_character)
+            return player.save(new_character.toJSON())
         else:
             print('Invalid choice, try again')
-        
+            
         # print(f'{new_character.name}\n{new_character.gender}\n{new_character.race}\n{new_character.classes}\n{new_character.healthMax}\n{new_character.manaMax}')

@@ -27,7 +27,7 @@ def show_inventory():
 
 def save(hero):
     jsonString = json.dumps(hero)
-    jsonFile = open("hero.json", "w")
+    jsonFile = open("/Users/Rafal/Desktop/Git/SimpleRPGgame/rpg/game/save/hero.json", "w")
     jsonFile.write(jsonString)
     jsonFile.close()
 
