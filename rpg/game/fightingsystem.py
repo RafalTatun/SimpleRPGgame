@@ -1,16 +1,14 @@
-from enemy import Troll
-from character import classes
+from enemies.enemy import Troll
+from player import Player
 import random
 
 
 enemy1 = Troll()
-hero1 = classes.Mage()
-hero2 = classes.Rogue()
-
+player = Player()
 #Showing stats before and after fight
 def stats():
-    print(f'Your stats\nHealth: {hero2.health}\n Mana: {hero2.mana}\n')
-    print(f'Your enemy\nHealth: {enemy1.health}\n Rage: {enemy1.rage}\n')
+    print(f'Your enemy\nName: {player.stats("Slot_1")}\n')
+    print(f'Your enemy\nName: {enemy1.name}\nHealth: {enemy1.health}\nRage: {enemy1.rage}\nLevel: {enemy1.level}\n')
 
 
 #Fighting system
@@ -46,4 +44,4 @@ def fighting_system():
         else:
             break
 
-fighting_system()
+stats()

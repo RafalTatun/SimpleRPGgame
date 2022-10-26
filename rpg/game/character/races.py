@@ -8,6 +8,10 @@ class Race:
     extra_mana: int = 0
     extra_rage: int = 0
     extra_stamina: int = 0
+
+
+    def get_name(self):
+        return self.name
     
 
 class Human(Race):
@@ -28,3 +32,4 @@ class Elf(Race):
 class Dwarf(Race):
     def __init__(self, name='Dwarf', extra_hp = 50, extra_mana = 25, extra_rage = 0, extra_stamina = 25):
         super().__init__(name, extra_hp, extra_mana, extra_rage, extra_stamina)
+        

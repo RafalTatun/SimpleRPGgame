@@ -11,6 +11,10 @@ class Class():
     stamina: int = 0
 
 
+    def get_name(self):
+        return self.name
+
+
 # Class Warrior
 class Warrior(Class):
     def __init__(self, name='Warrior', health=200, rage=50):

@@ -1,16 +1,15 @@
 #Charpter 1
 import os
 import printslow as ps
-import character.create
+from character import *
 from npc.npc import malcolm
-import player
 
 # Story 1
-new_character = character.create.Create()
+new_character = create.Create()
 
 
 # Init new character 
-def init_new_character():
+def init_new_character(slot):
     os.system('cls')
     os.system('clear')
     ps.print_slow('Charpter 1\n"Headache"')
@@ -20,11 +19,9 @@ def init_new_character():
         choice = input('Select option: ')
         if int(choice) == 1:
             ps.print_slow(malcolm.get_text[2])
-            new_character.update_char()
-            return player.save(new_character.toJSON())
+            new_character.update_char(slot)
         elif int(choice) == 2:
-            new_character.update_char()
-            return player.save(new_character.toJSON())
+            new_character.update_char(slot)
         else:
             print('Invalid choice, try again')
             

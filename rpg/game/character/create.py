@@ -1,20 +1,21 @@
 # Creating character
-
-import os
 from .races import *
 from .classes import *
 from .location import *
-from .professions import *
+from player import *
 from dataclasses import dataclass
 import json
+
+player_save = Player()
+
 
 @dataclass
 class Create:
     name: str = None
-    gender: str = None
-    race: str = None
-    classes: str = None
-    profession: str = None
+    race: dict = None
+    classes: dict = None
+    level: int = 1
+    exp: int = 0
     location: str = None
     health_max: int = 0
     mana_max: int = 0
@@ -24,8 +25,7 @@ class Create:
 
     def init_general_information(self):
         self.name = input('What is your name: ')
-        self.gender = input('What is your gender: ')
-        return self.name, self.gender
+        return self.name
 
 
     def init_race(self):
@@ -65,6 +65,15 @@ class Create:
                 print('Invalid choice, try again')
 
 
+    def update_stats(self):
+        self.health_max = self.race.extra_hp + self.classes.health
+        self.mana_max = self.race.extra_mana + self.classes.mana
+        self.rage_max = self.race.extra_rage + self.classes.rage 
+        self.stamina_max = self.race.extra_stamina + self.classes.stamina
+        self.level = self.level
+        self.exp = self.exp
+
+
     def update_map(self):
         print('Where did you born: \n1. Town1\n2. Town2\n3. Town3')
         while True:
@@ -82,26 +91,56 @@ class Create:
                 print('Invalid choice, try again')
 
 
-    def update_stats(self):
-        self.health_max = self.race.extra_hp + self.classes.health
-        self.mana_max = self.race.extra_mana + self.classes.mana
-        self.rage_max = self.classes.rage
-        self.stamina_max = self.classes.stamina
+    def write_json_file(self, data, filename="./save/hero.json"):
+        # data[slot] = {"name":self.name, "race":self.race, "class":self.classes, }
+        #DOKOŃCZYĆ WPISYWANIE DO DATA[SLOT]
+        with open(filename, 'w') as fp:
+            json.dump(data, fp, indent=4)       
+        
+
+        # data = data[slot]["name"].update(self.name)
+        # data = data[slot]["race"].update(self.race)
+        # data = data[slot]["class"].update(self.classes)
+        # data = data[slot]["stats"]["health"].update(self.health_max)
+        # data = data[slot]["stats"]["mana"].update(self.mana_max)
+        # data = data[slot]["stats"]["raga"].update(self.raga_max)
+        # data = data[slot]["stats"]["stamina"].update(self.stamina_max)
+        # data = data[slot]["stats"]["level"].update(self.level)
+        # data = data[slot]["stats"]["exp"].update(self.exp)
 
 
-    def update_char(self):
-        os.system('cls')
-        os.system('clear')
+        # data[slot]["name"] = self.name
+        # data[slot]["race"] = self.race
+        # data[slot]["class"] = self.classes
+        # data[slot]["stats"]["health"] = self.health_max
+        # data[slot]["stats"]["mana"] = self.mana_max
+        # data[slot]["stats"]["raga"] = self.raga_max
+        # data[slot]["stats"]["stamina"] = self.stamina_max
+        # data[slot]["stats"]["level"] = self.level
+        # data[slot]["stats"]["exp"] = self.exp
+
+
+    def update_char(self, slot):
         self.init_general_information()
         self.init_race()
         self.init_class()
-        self.update_map()
         self.update_stats()
+        self.update_map()
+        with open("./save/hero.json") as json_file:
+            data = json.load(json_file)
+            data[f'Slot_{slot}']['name'] = self.name
+            data[f'Slot_{slot}']['race'] = vars(self.race).get('name')
+            data[f'Slot_{slot}']['class'] = vars(self.classes).get('name')
+            data[f'Slot_{slot}']['health'] = self.health_max
+            data[f'Slot_{slot}']['mana'] = self.mana_max
+            data[f'Slot_{slot}']['rage'] = self.rage_max
+            data[f'Slot_{slot}']['stamina'] = self.stamina_max
+            data[f'Slot_{slot}']['level'] = self.level
+            data[f'Slot_{slot}']['exp'] = self.exp
+            # y = {"name": self.name, "race": self.race, "class": self.classes, "health": self.health_max, "mana": self.mana_max, "rage": self.rage_max, "stamina": self.stamina_max, "level": self.level, "exp": self.exp}
+            # temp.append(y) 
+        self.write_json_file(data)
+        print(self.name, self.race, self.classes, self.level, self.exp, self.location, self.health_max, self.mana_max, self.rage_max, self.stamina_max)
 
-
-    def toJSON(self):
-        return json.dumps(self, default=lambda o: o.__dict__)
 
 # Tutaj skończyłeś i potrzebujesz zrobić część programu z zapisywaniem danych z Class na słownik, potem do JSON i Mapę!!! :D zapomniałem bo zacząłem robić mapę do gry w konsoli
-
-

@@ -1,1 +1,19 @@
-"{\"name\": \"Eldkar\", \"gender\": \"Male\", \"race\": {\"name\": \"Human\", \"extra_hp\": 25, \"extra_mana\": 25, \"extra_rage\": 25, \"extra_stamina\": 25}, \"classes\": {\"name\": \"Warrior\", \"health\": 200, \"mana\": 50, \"rage\": 0, \"stamina\": 0}, \"profession\": null, \"location\": {\"name\": \"Wroc\", \"player_location\": 3}, \"health_max\": 225, \"mana_max\": 75, \"rage_max\": 0, \"stamina_max\": 0}"
+{
+    "Slot_1": {
+        "name": "Eldkar",
+        "race": "Human",
+        "class": "Warrior",
+        "health": 225,
+        "mana": 75,
+        "rage": 25,
+        "stamina": 25,
+        "level": 1,
+        "exp": 0
+    },
+    "Slot_2": {
+        "name": "Empty slot"
+    },
+    "Slot_3": {
+        "name": "Empty slot"
+    }
+}

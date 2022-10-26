@@ -1,0 +1,14 @@
+{
+    "Troll": {
+        "name": "Troll",
+        "lvl": 1,
+        "health": 50,
+        "rage": 100
+    },
+    "Which": {
+        "name": "Which",
+        "lvl": 5,
+        "health": 150,
+        "mana": 100
+    }
+}
