@@ -2,10 +2,22 @@
     "Malcolm": {
         "id": 1,
         "name": "Malcolm",
-        "text": ["Hello Adventure!\n I'm glad to see, you feel right\n We need to hurry...\n Roof comes down", "1. Who are You?\n My head's about to explode...\n\n2. I'm... [Creating character]", "Who are me...\nWho are You?!"],
+        "text": ["Hello Adventure!\n I'm glad to see, you feel right\n We need to hurry...\n Roof comes down", "1. Who are You?\n My head's about to explode...\n\n2. I'm... [Creating character]", "Who are me...\nWho are You?!", "Nice to meet You, I'm Malcolm.\nCan we go now!", "I have a quests for You"],
         "quests": {
-            "starter": ["1. Kill some wolves (5)", "2. Deliver package to the Major"],
-            "normal": [""]
+            "starter": {
+                "1. Kill some wolves (5)": {
+                    "amount": 0,
+                    "amountDone": 5,
+                    "done": false,
+                    "prize": "long sword"
+                },
+                "2. Deliver package to the Major":{
+                    "startLocation": "Town1",
+                    "endLocation": "Town2",
+                    "done": false,
+                    "prize": 50
+                }},
+            "normal": {}
         },
         "type": "Friend"
     },
@@ -13,7 +25,7 @@
         "id": 2,
         "name": "Minsz",
         "text": ["Hello Minio"],
-        "quests": [],
+        "quests": {},
         "type": "Wife"
     }
 }

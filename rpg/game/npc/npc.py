@@ -12,7 +12,7 @@ class Npc():
     id: int = None
     name: str = 'Stranger'
     text: list[str] = field(default_factory=list)
-    quests: list[str] = field(default_factory=list)
+    quests: dict[str] = field(default_factory=list)
     type: str = None
 
 

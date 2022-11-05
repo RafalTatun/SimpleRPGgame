@@ -20,12 +20,9 @@ def init_new_character(slot):
         if int(choice) == 1:
             ps.print_slow(malcolm.get_text[2])
             new_character.update_char(slot)
-            continue
         elif int(choice) == 2:
             new_character.update_char(slot)
         else:
             print('Invalid choice, try again')
-        ps.print_slow(malcolm.get_text[4])
-        ps.print_slow(malcolm.get_quest[0])
-        choice = input('Select option: ')
+            
         # print(f'{new_character.name}\n{new_character.gender}\n{new_character.race}\n{new_character.classes}\n{new_character.healthMax}\n{new_character.manaMax}')

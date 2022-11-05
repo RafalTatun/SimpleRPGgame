@@ -1,12 +1,12 @@
 {
     "Slot_1": {
         "name": "Eldkar",
-        "race": "Human",
+        "race": "Orc",
         "class": "Warrior",
-        "health": 225,
-        "mana": 75,
-        "rage": 25,
-        "stamina": 25,
+        "health": 250,
+        "mana": 50,
+        "rage": 50,
+        "stamina": 0,
         "level": 1,
         "exp": 0
     },

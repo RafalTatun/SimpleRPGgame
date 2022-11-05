@@ -1,4 +1,10 @@
 {
+    "Wolf": {
+        "name": "Wolf",
+        "lvl": 1,
+        "health": 20,
+        "rage": 50
+    },
     "Troll": {
         "name": "Troll",
         "lvl": 1,
