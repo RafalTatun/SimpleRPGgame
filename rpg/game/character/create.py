@@ -120,23 +120,24 @@ class Create:
         # data[slot]["stats"]["exp"] = self.exp
 
 
-    def update_char(self, slot):
+    def update_char(self):
+        os.system(f"cp hero.json {self.name}.json")
         self.init_general_information()
         self.init_race()
         self.init_class()
         self.update_stats()
         self.update_map()
-        with open("./save/hero.json") as json_file:
+        with open("./save/"+self.name+".json") as json_file:
             data = json.load(json_file)
-            data[f'Slot_{slot}']['name'] = self.name
-            data[f'Slot_{slot}']['race'] = vars(self.race).get('name')
-            data[f'Slot_{slot}']['class'] = vars(self.classes).get('name')
-            data[f'Slot_{slot}']['health'] = self.health_max
-            data[f'Slot_{slot}']['mana'] = self.mana_max
-            data[f'Slot_{slot}']['rage'] = self.rage_max
-            data[f'Slot_{slot}']['stamina'] = self.stamina_max
-            data[f'Slot_{slot}']['level'] = self.level
-            data[f'Slot_{slot}']['exp'] = self.exp
+            data['name'] = self.name
+            data['race'] = vars(self.race).get('name')
+            data['class'] = vars(self.classes).get('name')
+            data['health'] = self.health_max
+            data['mana'] = self.mana_max
+            data['rage'] = self.rage_max
+            data['stamina'] = self.stamina_max
+            data['level'] = self.level
+            data['exp'] = self.exp
             # y = {"name": self.name, "race": self.race, "class": self.classes, "health": self.health_max, "mana": self.mana_max, "rage": self.rage_max, "stamina": self.stamina_max, "level": self.level, "exp": self.exp}
             # temp.append(y) 
         self.write_json_file(data)

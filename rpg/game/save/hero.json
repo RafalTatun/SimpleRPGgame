@@ -1,19 +1,13 @@
 {
-    "Slot_1": {
-        "name": "Eldkar",
-        "race": "Orc",
-        "class": "Warrior",
-        "health": 250,
-        "mana": 50,
-        "rage": 50,
+    "Hero": {
+        "name": "",
+        "race": "",
+        "class": "",
+        "health": 0,
+        "mana": 0,
+        "rage": 0,
         "stamina": 0,
         "level": 1,
         "exp": 0
-    },
-    "Slot_2": {
-        "name": "Empty slot"
-    },
-    "Slot_3": {
-        "name": "Empty slot"
     }
 }

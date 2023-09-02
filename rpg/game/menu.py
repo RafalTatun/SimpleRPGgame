@@ -35,18 +35,27 @@ def main_menu():
 
 
 def slot(slot):
-    print(f'1. {data_slot["Slot_1"]["name"]}\n2. {data_slot["Slot_2"]["name"]}\n3. {data_slot["Slot_3"]["name"]}')
-    if int(input('Select option: ')) == 1:
-        init_new_character(slot)
-        data_slot['Slot_1']['name'] = new_character.name
-    elif int(input('Select option: ')) == 2:
-        init_new_character(slot)
-        data_slot['Slot_2']['name'] = new_character.name
-    elif int(input('Select option: ')) == 3:
-        init_new_character(slot)
-        data_slot['Slot_3']['name'] = new_character.name
-    else:
-        print('Invalid choice, try again')
+    print(os.system("ls ./save"))
+    match slot:
+        case 1:
+            init_new_character(slot)
+        case 2:
+            init_new_character(slot)
+        case 3:
+            init_new_character(slot)
+        case _:
+            return 'Invalid choice, try again'
+    # if int(input('Select option: ')) == 1:
+    #     init_new_character(slot)
+    #     data_slot['Slot_1']['name'] = new_character.name
+    # elif int(input('Select option: ')) == 2:
+    #     init_new_character(slot)
+    #     data_slot['Slot_2']['name'] = new_character.name
+    # elif int(input('Select option: ')) == 3:
+    #     init_new_character(slot)
+    #     data_slot['Slot_3']['name'] = new_character.name
+    # else:
+    #     print('Invalid choice, try again')
 
 
 def load():

@@ -19,10 +19,10 @@ def init_new_character(slot):
         choice = input('Select option: ')
         if int(choice) == 1:
             ps.print_slow(malcolm.get_text[2])
-            new_character.update_char(slot)
+            new_character.update_char()
             continue
         elif int(choice) == 2:
-            new_character.update_char(slot)
+            new_character.update_char()
         else:
             print('Invalid choice, try again')
         ps.print_slow(malcolm.get_text[4])
